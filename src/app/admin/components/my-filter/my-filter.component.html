@@ -1,0 +1,39 @@
+<mat-toolbar class="filter-header">
+  <button mat-button (click)="filter.toggle()" (click)="filterc()">Filtro<mat-icon>filter_list</mat-icon></button>
+
+
+  <mat-chip-list #chipList aria-label="filter selection" *ngIf="chip">
+    <div *ngFor="let filtercheck of filters, let i of index">
+      <mat-chip [selectable]="selectable" [removable]="removable" *ngIf="filtercheck.values[0].selected == true"
+        (removed)="remove(i)">
+        <div>
+          {{filtercheck.name}}
+        </div>
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+    </div>
+  </mat-chip-list>
+</mat-toolbar>
+<mat-sidenav #filter mode="side" class="filter-content">
+
+
+
+
+  <div *ngFor="let options of filters, let i of index" class="options">
+    <p>{{options.name}}
+    </p>
+    <div *ngFor="let item of options.values, let indice of index" class="options2">
+      <label class="itemvalue">{{item.value}}
+        <input type="checkbox"[checked]="item.selected" color="primary" class="checkbox" id="checkbox"(click)="selected(i,indice)">
+        <span class="checkmark"></span>
+      </label>
+     
+
+    </div>
+  </div>
+
+  <mat-toolbar class="filter-footer">
+    <app-my-button name="Listo" color="primary" (click)="filter.toggle()" (click)="filtercheck()">
+    </app-my-button>
+  </mat-toolbar>
+</mat-sidenav>

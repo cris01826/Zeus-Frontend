@@ -1,0 +1,49 @@
+<mat-sidenav
+  #sidenav2
+  mode="over"
+  position="end"
+  [(opened)]="open"
+  (click)="closeModal()"
+  fixedInViewport="true"
+  class="modalfondo"
+>
+</mat-sidenav>
+<mat-sidenav
+  #sidenav
+  mode="over"
+  [(opened)]="open"
+  fixedInViewport="true"
+  class="modal"
+  position="end"
+>
+  <div class="modal-header">
+    <div class="grid">
+      <div class="col-3">
+        <mat-icon (click)="closeModal()">keyboard_backspace</mat-icon>
+      </div>
+      <div class="col-9">
+        <h3>
+          {{ title }}
+        </h3>
+      </div>
+    </div>
+  </div>
+  <mat-sidenav-content class="modal-content">
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+
+  <div class="modal-footer">
+    <div class="modal-button">
+      <app-my-button color="default" name="Cancelar" (click)="closeModal()">
+      </app-my-button>
+
+      <app-my-button
+        color="primary"
+        name="Guardar"
+        type="submit"
+        (click)="saveModal()"
+      >
+      </app-my-button>
+    </div>
+  </div>
+</mat-sidenav>

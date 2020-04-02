@@ -1,0 +1,44 @@
+<mat-sidenav-container class="sidebar" *ngIf="shouldRun">
+  <mat-sidenav #sidenav mode="over">
+    
+    <mat-nav-list class="list-sidebar">
+      <a mat-list-item title="Prfil" routerLink="/admin/dashboard"
+      ><img src="assets/img/user.jpg" alt=""><p>Coordinador</p> </a
+    >
+      <a mat-list-item title="Inicio" routerLink="/admin/dashboard"
+        ><mat-icon>home</mat-icon><p>Inicio</p></a
+      >
+      <a mat-list-item title="Tablas" routerLink="/admin/tables"
+        ><mat-icon>dashboard</mat-icon><p>Tablas</p></a
+      >
+      <a mat-list-item title="Horarios" routerLink="/admin/calendar"
+        ><mat-icon>date_range</mat-icon><p>Horarios</p></a
+      >
+     
+      <a mat-list-item title="Cerrar sesion" routerLink="/admin/dashboard"
+        ><mat-icon>exit_to_app</mat-icon><p>Cerrar sesion</p></a
+      >
+     
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="example-toolbar">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h3 class="example-app-name">Zeus</h3>
+      <div class="search">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Busqueda rapida"
+        />
+        
+      </div>
+      <mat-icon class="icon_search">search</mat-icon>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

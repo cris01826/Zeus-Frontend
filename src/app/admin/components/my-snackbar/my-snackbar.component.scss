@@ -1,0 +1,40 @@
+::ng-deep .danger{
+    background-color: red;
+    color:white;
+    max-width: 90% !important;
+    width: 90% !important;
+    float: right;
+    .mat-simple-snackbar-action {
+        border:1px solid white;
+        color: white !important;
+        border-radius: 5px;
+    }
+    
+}
+
+::ng-deep .success{
+    background-color: green;
+    color:white;
+    max-width: 90% !important;
+    width: 90% !important;
+    .mat-simple-snackbar-action {
+        border:1px solid white;
+        color: white !important;
+        border-radius: 5px;
+    }
+    
+}
+
+::ng-deep .warning{
+    background-color: darkorange;
+    color:white;
+    max-width: 90% !important;
+    width: 90% !important;
+    float: left;
+    .mat-simple-snackbar-action {
+        border:1px solid white;
+        color: white !important;
+        border-radius: 5px;
+    }
+    
+}

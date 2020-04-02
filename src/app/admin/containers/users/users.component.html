@@ -1,0 +1,150 @@
+<div class="content">
+  <app-my-card-content title="Usuarios" iconback="true">
+    <div class="grid">
+      <div class="col-12">
+        <app-my-table
+          [(datasource)]="dataSource"
+          [(columns)]="columns"
+          [(length)]="length"
+          paginator="true"
+          search="true"
+          [(pagesize)]="pageSize"
+          [(isLoadingResults)]="isLoadingResults"
+          placeholder="Ingrese nombre del usuario"
+          label="Buscar usuario"
+          [(pagesizeoptions)]="pageSizeOptions"
+          (changePaginator)="changePaginator($event)"
+          (changeFilter)="changeFilter($event)"
+          (changeSort)="changeSort($event)"
+          (deleteItems)="deleteItems($event)"
+          (editItems)="editItems($event)"
+        >
+        </app-my-table>
+      </div>
+      <div class="content-button">
+        <a
+          mat-button
+          (click)="openModalUsers('Crear Usuario')"
+          color="primary"
+          style="color:#238276"
+          class="button_add_document"
+        >
+          <mat-icon>add</mat-icon> Crear Usuario
+        </a>
+      </div>
+    </div>
+  </app-my-card-content>
+</div>
+
+<!-- modal -->
+<app-my-modal
+  title="{{ titleModal }}"
+  [open]="openModal"
+  (close)="deleteModal()"
+  (save)="createModal()"
+>
+  <div class="grid">
+    <div class="col-3">
+      <app-my-input
+        label="Primer Nombre"
+        placeholder="Primer Nombre"
+        [(value)]="firts_name"
+      >
+      </app-my-input>
+    </div>
+    <div class="col-3">
+      <app-my-input
+        label="Segundo Nombre"
+        placeholder="Segundo Nombre"
+        [(value)]="firts_name"
+      >
+      </app-my-input>
+    </div>
+    <div class="col-3">
+      <app-my-input
+        label="Primer Apellido"
+        placeholder="Primer Apellido"
+        [(value)]="firts_name"
+      >
+      </app-my-input>
+    </div>
+    <div class="col-3">
+      <app-my-input
+        label="Segundo Apellido"
+        placeholder="Segundo Apellido"
+        [(value)]="firts_name"
+      >
+      </app-my-input>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="col-6">
+      <app-my-select label="Tipo de documento"> </app-my-select>
+    </div>
+    <div class="col-6">
+      <app-my-input
+        label="Documento"
+        placeholder="Documento"
+        type="number"
+        [(value)]="firts_name"
+      >
+      </app-my-input>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-4">
+      <app-my-input
+        label="Correo"
+        placeholder="Correo"
+        type="email"
+        [(value)]="firts_name"
+      >
+      </app-my-input>
+    </div>
+    <div class="col-4">
+      <app-my-input
+        label="Celular"
+        placeholder="Celular"
+        [(value)]="firts_name"
+        type="number"
+      >
+      </app-my-input>
+    </div>
+    <div class="col-4">
+      <app-my-input
+        label="Direccion"
+        placeholder="Direccion"
+        [(value)]="firts_name"
+        
+      >
+      </app-my-input>
+    </div>
+  </div>
+  <div class="grid">
+      <div class="col-3"> <app-my-select label="Estado"> </app-my-select></div>
+      <div class="col-3"> <app-my-select label="Rol"> </app-my-select></div>
+      <div class="col-3"> <app-my-select label="Profesion"> </app-my-select></div>
+      <div class="col-3"> <app-my-select label="Tipo de contrato"> </app-my-select></div>
+  </div>
+  <div class="grid">
+      <div class="col-6">
+        <app-my-input
+        label="Contraseña"
+        placeholder="Contraseña"
+        [(value)]="firts_name"
+        
+      >
+      </app-my-input>
+      </div>
+      <div class="col-6">
+        <app-my-input
+        label="Repetir Contraseña"
+        placeholder="Repetir Contraseña"
+        [(value)]="firts_name"
+        
+      >
+      </app-my-input>
+    </div>
+  </div>
+</app-my-modal>

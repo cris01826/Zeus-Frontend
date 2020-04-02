@@ -1,0 +1,17 @@
+<mat-form-field appearance="outline">
+  <mat-label>{{ label }}</mat-label>
+  <mat-select
+    [(ngModel)]="value"
+    [formControl]="formControl"
+    [(value)]="value"
+    (selectionChange)="change()"
+    [(required)]="required"
+    [(multiple)]="multiple"
+  >
+    <mat-option *ngFor="let element of list" [value]="element.id">{{
+      element.value
+    }}</mat-option>
+  </mat-select>
+  <mat-error>{{ error }}</mat-error>
+  <mat-hint>{{ hintText }}</mat-hint>
+</mat-form-field>

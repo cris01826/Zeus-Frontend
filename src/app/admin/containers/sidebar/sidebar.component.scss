@@ -1,0 +1,137 @@
+.sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+}
+
+.example-toolbar {
+  position: fixed;
+  top: 0;
+  position: fixed;
+  background-color: #238276 !important;
+  z-index: 2;
+  height: 80px;
+}
+.toolbar-search {
+  background-color: #ffffff;
+  height: 60px !important;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+}
+.toolbar-search .search {
+  text-align: left;
+  width: 100%;
+}
+.search-input {
+  padding-left: 20px;
+  text-align: left;
+  margin-left: 60px !important;
+  background-color: #d1d3d3;
+  border: none;
+  height: 25px;
+  border-radius: 50px;
+  width: 450px;
+  outline: none;
+}
+.icon_search {
+  margin-left: 7px !important;
+  margin-top: 5px !important;
+}
+.search-input:focus:hover:active {
+  background-color: #d1d3d3;
+  border: none;
+  height: 25px;
+  border-radius: 50px;
+  width: 450px;
+}
+.mat-sidenav {
+  width: 250px;
+}
+
+.card-content {
+  margin-right: 40px;
+  margin-left: 80px;
+  margin-top: 150px;
+  border-radius: 0px !important;
+  padding: 40px;
+}
+.example-app-name {
+  margin-left: 20px !important;
+}
+img {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 100%;
+  margin-right: 10px;
+  margin-top: 3px;
+}
+mat-sidenav:not(.mat-drawer-opened) {
+  margin-top: 80px !important;
+  transform: translate3d(0, 0, 0) !important;
+  visibility: visible !important;
+  width: 65px !important;
+  overflow-x: hidden !important;
+}
+mat-sidenav:not(.mat-drawer-opened) .navigation-item-label {
+  display: none !important;
+  overflow-x: hidden !important;
+}
+mat-sidenav:not(.mat-drawer-opened) .home-button {
+  display: none !important;
+  overflow-x: hidden !important;
+}
+mat-sidenav-content {
+  background-color: #f8f8f8 !important;
+}
+.list-sidebar {
+  margin-top: 10px;
+}
+mat-nav-list {
+  color: #238276 !important;
+  padding: 0px !important;
+  mat-icon {
+    font-size: 30px;
+    margin-right: 20px;
+    color: #238276;
+  }
+  mat-icon:hover {
+    background-color: #238276 !important;
+    color: #ffffff;
+  }
+  p {
+    padding-top: 9px !important;
+    padding-left: 5px;
+  }
+  a {
+    color: #238276 !important;
+  }
+  a:hover {
+    background-color: #238276 !important;
+    color: #ffffff !important;
+    mat-icon {
+      background-color: #238276 !important;
+      color: #ffffff !important;
+    }
+  }
+  a:focus {
+    background-color: #238276 !important;
+    color: #ffffff !important;
+    mat-icon {
+      background-color: #238276 !important;
+      color: #ffffff !important;
+    }
+  }
+  a:active {
+    background-color: #238276 !important;
+    color: #ffffff !important;
+    mat-icon {
+      background-color: #238276 !important;
+      color: #ffffff !important;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<mat-form-field appearance="outline">
+  <mat-label>{{ label }}</mat-label>
+  <input 
+    [formControl]="formControl"
+    matInput
+    [placeholder]="placeholder"
+    [value]="value"
+    [type]="type"
+    [(required)]="required"
+    [(ngModel)]="value"
+    [(readonly)]="readonly"
+    
+    (ngModelChange)="change()"
+  />
+  <mat-icon *ngIf="icon" matSuffix ng>{{ icon }}</mat-icon>
+  <mat-error>{{ error }}</mat-error>
+  <mat-hint>{{ hintText }}</mat-hint>
+</mat-form-field>

@@ -1,0 +1,55 @@
+<div class="content">
+  <app-my-card-content title="Horarios instructor" iconback="true">
+    <br />
+    <br />
+    <div class="grid">
+      <div class="col-4"></div>
+      <div class="col-8">
+      
+        <div class="grid title">
+          <div class="col-12 title-calendar">
+            <div class="calendar-title">
+              <mat-icon title="Mes anterior" (click)="goPreviousMonth()"
+                >keyboard_arrow_left</mat-icon
+              >
+              <h3>{{ monthtitle }}</h3>
+              <mat-icon title="Mes siguiente"(click)="goNextMonth()">keyboard_arrow_right</mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="infoday">
+            <table class="infoday">
+              <thead class="infoday">
+                <tr>
+                  <th *ngFor="let day of dayslabel">{{ day }}</th>
+                </tr>
+              </thead>
+              <tbody class="infoday">
+                <tr *ngFor="let week of totalday">
+                  <td *ngFor="let day of week.days">
+                    <div *ngIf="day.month == true">
+                      {{ day.day }}
+                    </div>
+                    <div *ngIf="day.month == true">
+                      <div
+                        class="content_activate"
+                        *ngFor="let acti of day.activ"
+                      >
+                        <div
+                          class="feti_active"
+                          [style.background]="acti.color"
+                          *ngIf="acti.activ == true"
+                        ></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </app-my-card-content>
+</div>

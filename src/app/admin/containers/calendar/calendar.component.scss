@@ -1,0 +1,41 @@
+.content {
+  margin-top: 120px !important;
+}
+.tabla_principal {
+  margin: 10px;
+  text-align: center;
+  justify-content: center;
+  color: #238276 !important;
+  width: 200px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 30px;
+  height: 200px;
+  cursor: pointer;
+  mat-icon {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 100px;
+    color: #238276 !important;
+  }
+}
+.tabla_principal:hover {
+  margin: 20px;
+  height: 180px;
+  text-align: center;
+  justify-content: center;
+  background-color: #238276 !important;
+  color: #ffffff !important;
+  width: 200px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 30px;
+  cursor: pointer;
+  mat-icon {
+    font-size: 100px;
+    color: #ffffff !important;
+  }
+}
+h2 {
+  margin-left: 25px !important;
+}

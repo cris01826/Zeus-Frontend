@@ -1,0 +1,32 @@
+<div class="grid">
+    <div class="col-12">
+        <button mat-button  (click)="fileInput.click()" type="button" color="primary" style="color:#37474f"><mat-icon>add</mat-icon>{{subtitle}}</button>
+         <input (change)="onFileSelected($event.target.files)" [accept]="accept" #fileInput type="file" id="fileInput">
+     </div>
+    <div class="col-12">
+        <mat-list>
+            <h3 mat-subheader>{{title}}</h3>
+            <mat-list-item *ngFor="let file of files, let i of index">
+
+                <mat-icon mat-list-icon color="primary" style="color:#37474f"
+                *ngIf="file.type == 'jpg' || file.type == 'jpeg' || file.type == 'png' || file.type == 'gif'"
+                >insert_photo
+                </mat-icon>
+                <mat-icon mat-list-icon color="primary"
+                *ngIf="file.type == 'doc' || file.type == 'docx' || file.type == 'pdf' || file.type == 'xls'|| file.type == 'xlsx'"
+                >insert_drive_file
+                </mat-icon>
+
+                <h4 mat-line>{{file.name}}</h4>
+                <p mat-line> {{file.size}} - {{file.date}}  </p>
+
+            <button mat-button (click)="deleteFile(i)"><mat-icon style="color:#37474f" title="Eliminar">delete_forever</mat-icon></button>
+
+            <!-- <button mat-button (click)="download(i)"><mat-icon color="accent" title="Descargar">arrow_downward</mat-icon></button> -->
+
+            </mat-list-item>
+        </mat-list>
+
+        
+    </div>
+</div>

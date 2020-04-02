@@ -1,0 +1,92 @@
+<div class="content">
+  <app-my-card-content title="Fichas" iconback="true">
+    <div class="grid">
+      <div class="col-12">
+        <app-my-table
+          [(datasource)]="dataSource"
+          [(columns)]="columns"
+          [(length)]="length"
+          paginator="true"
+          search="true"
+          [(pagesize)]="pageSize"
+          [(isLoadingResults)]="isLoadingResults"
+          placeholder="Ingrese nombre del usuario"
+          label="Buscar usuario"
+          [(pagesizeoptions)]="pageSizeOptions"
+          (changePaginator)="changePaginator($event)"
+          (changeFilter)="changeFilter($event)"
+          (changeSort)="changeSort($event)"
+          (deleteItems)="deleteItems($event)"
+          (editItems)="editItems($event)"
+        >
+        </app-my-table>
+      </div>
+      <div class="content-button">
+        <a
+          mat-button
+          (click)="openModalRol('Crear Ficha')"
+          color="primary"
+          style="color:#238276"
+          class="button_add_document"
+        >
+          <mat-icon>add</mat-icon> Crear Ficha
+        </a>
+      </div>
+    </div>
+  </app-my-card-content>
+</div>
+
+<!-- modal -->
+<app-my-modal
+  title="{{ titleModal }}"
+  [open]="openModal"
+  (close)="deleteModal()"
+  (save)="createModal()"
+>
+  <div class="grid">
+    <div class="col-6">
+      <app-my-input
+        label="Numero de ficha"
+        placeholder="Numero de ficha"
+        type="number"
+      ></app-my-input>
+    </div>
+    <div class="col-6">
+      <app-my-select label="Programa" [(value)]="firts_name"> </app-my-select>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="col-6">
+      <mat-form-field appearance="outline" style="width:100%">
+        <mat-label>Fecha Inicio</mat-label>
+        <input
+          matInput
+          [value]="date_initial"
+          [(ngModel)]="date_initial"
+          [matDatepicker]="dateinitial"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="dateinitial"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #dateinitial></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-6">
+      <mat-form-field appearance="outline" style="width:100%">
+        <mat-label>Fecha Fin</mat-label>
+        <input
+          matInput
+          [(ngModel)]="date_end"
+          readonly
+          [matDatepicker]="dateend"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="dateend"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #dateend></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+</app-my-modal>
